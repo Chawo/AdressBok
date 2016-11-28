@@ -1,0 +1,15 @@
+﻿@model Adressbok.Models.Adressboken
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@Html.BeginForm()   
+{
+@Html.LabelFor(x => x.Id);
+@Html.LabelFor(x => x.Namn);
+@Html.LabelFor(x => x.Adress);
+}
+

@@ -1,0 +1,16 @@
+﻿@model List<Adressbok.Models.Adressboken>
+@{
+    ViewBag.Title = "ListOfAdress";
+}
+
+<h2>ListOfAdress</h2>
+ 
+@foreach (var adress in Model)
+{
+    @Html.Label(adress.Id.ToString());<br />
+    @Html.Label(adress.Namn);<br />
+    @Html.Label(adress.Adress);<br />
+    @Html.Label(adress.Telefonnummer.ToString());
+    @Html.ActionLink("Update", "Edit", "Adress", new { Id = adress.Id, Namn = adress.Namn, Adress = adress.Adress }, null)
+    <br /><br />
+}

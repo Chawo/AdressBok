@@ -1,0 +1,30 @@
+﻿@model Adressbok.Models.Adressboken
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@{
+    var ajaxOptions = new AjaxOptions
+    {
+        HttpMethod = "POST"
+    };
+}
+
+@using (Ajax.BeginForm("Create", "Adress", ajaxOptions))
+{
+    @Html.TextBoxFor(adress => adress.Id)<br />
+    @Html.TextBoxFor(adress => adress.Namn)<br />
+    @Html.TextBoxFor(adress => adress.Telefonnummer)<br />
+    @Html.TextBoxFor(adress => adress.Adress)
+    <input type="submit" value="Lägg till adress" />
+}
+
+<div id="result">
+
+    @{
+        Html.RenderAction("ListOfAdress");
+    }
+</div>
+
