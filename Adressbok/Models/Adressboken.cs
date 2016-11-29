@@ -7,10 +7,12 @@ namespace Adressbok.Models
 {
     public class Adressboken
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Namn { get; set; }
         public int Telefonnummer { get; set; }
         public string Adress { get; set; }
+        public DateTime Tidpunkt { get; set; }
+
 
     }
 }

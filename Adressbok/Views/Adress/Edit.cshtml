@@ -5,11 +5,17 @@
 }
 
 <h2>Edit</h2>
-
-@Html.BeginForm()   
+@{ 
+    var options = new AjaxOptions()
+    {
+        HttpMethod = "POST"
+    };
+}
+@using (@Ajax.BeginForm("Edit", "Adress", options))   
 {
-@Html.LabelFor(x => x.Id);
-@Html.LabelFor(x => x.Namn);
-@Html.LabelFor(x => x.Adress);
+    @Html.TextBoxFor(x => x.Namn)<br />
+    @Html.TextBoxFor(x => x.Adress)<br />
+    @Html.TextBoxFor(x => x.Tidpunkt)
+    <input type="submit" value="Spara" />
 }
 

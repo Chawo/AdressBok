@@ -9,7 +9,7 @@ namespace Adressbok.Controllers
 {
     public class AdressController : Controller
     {
-        public static IList<Adressboken> AdressList = new List<Adressboken>();
+        private static IList<Adressboken> AdressList = new List<Adressboken>();
 
         // GET: Adress
         
@@ -20,8 +20,9 @@ namespace Adressbok.Controllers
         [HttpPost]
         public ActionResult Create(Adressboken newAdress)
         {
+            newAdress.Id = Guid.NewGuid(); 
             AdressList.Add(newAdress);
-            return PartialView("ListOfAdress", AdressList);
+            return View(/*"ListOfAdress", AdressList*/);
         }
 
         public ActionResult ListOfAdress()
@@ -29,16 +30,35 @@ namespace Adressbok.Controllers
             return PartialView("ListOfAdress", AdressList);
         }
 
-        public ActionResult Edit(int id, string namn, string adress)
+        public ActionResult Edit(Guid id)
         {
-            var showAdress = AdressList.FirstOrDefault(x => x.Id == id);
-            return View(showAdress);
+            var adressID = AdressList.First(x => x.Id == id);
+            return View(adressID);
         }
         [HttpPost]
-        public ActionResult Edit(int adressID)
+        public ActionResult Edit(Guid Id, string namn, string adress, DateTime tidpunkt)
         {
-            var updatedAdress = AdressList.First().Id == adressID;
-            return View(updatedAdress);
+            var newAdress = AdressList.First(x => x.Id == Id);
+            if (newAdress != null)
+            {
+                newAdress.Namn = namn;
+                newAdress.Adress = adress;
+                newAdress.Tidpunkt = tidpunkt;
+
+            }
+            return View(newAdress);
+        }
+
+        public ActionResult Delete()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Delete(Guid id)
+        {
+            var Deleteid = AdressList.First(x => x.Id == id);
+            AdressList.Remove(Deleteid);
+            return View(Deleteid);
         }
     }
 }

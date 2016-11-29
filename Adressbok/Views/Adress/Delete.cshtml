@@ -1,0 +1,57 @@
+﻿@model Adressbok.Models.Adressboken 
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Adressboken</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Namn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Namn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefonnummer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefonnummer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tidpunkt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tidpunkt)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

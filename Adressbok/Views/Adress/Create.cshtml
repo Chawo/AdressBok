@@ -14,10 +14,15 @@
 
 @using (Ajax.BeginForm("Create", "Adress", ajaxOptions))
 {
-    @Html.TextBoxFor(adress => adress.Id)<br />
+   
+    @Html.LabelFor(x => x.Namn)<br />
     @Html.TextBoxFor(adress => adress.Namn)<br />
+    @Html.LabelFor(x => x.Telefonnummer)<br />
     @Html.TextBoxFor(adress => adress.Telefonnummer)<br />
-    @Html.TextBoxFor(adress => adress.Adress)
+    @Html.LabelFor(x => x.Adress)<br />
+    @Html.TextBoxFor(adress => adress.Adress)<br />
+    @Html.LabelFor(x => x.Tidpunkt)<br />
+    @Html.TextBoxFor(adress => adress.Tidpunkt)
     <input type="submit" value="Lägg till adress" />
 }
 
