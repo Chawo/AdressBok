@@ -54,7 +54,7 @@ namespace Adressbok.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [HttpDelete]
         public ActionResult Delete(Guid id)
         {
             var Deleteid = AdressList.First(x => x.Id == id);
