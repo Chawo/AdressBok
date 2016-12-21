@@ -151,6 +151,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Adress\Delete.cshtml" />
+    <Content Include="Views\Adress\ListOfAdresses.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -182,7 +183,6 @@
     <Content Include="Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Adress\Create.cshtml" />
-    <Content Include="Views\Adress\ListOfAdress.cshtml" />
     <Content Include="Views\Adress\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>

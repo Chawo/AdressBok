@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Adressbok.Models.Adressboken>
+
+@{
+    ViewBag.Title = "ListOfAdresses";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var ajaxOptions = new AjaxOptions
+    {
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "result"
+    };
+
+    var ajaxOptionsEdit = new AjaxOptions
+    {
+        HttpMethod = "GET",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "result"
+    };
+}
+
+<h2>ListOfAdresses</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Namn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefonnummer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tidpunkt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Namn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefonnummer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tidpunkt)
+        </td>
+        <td>
+            @Ajax.ActionLink("Update", "Edit", "Adress", new { Id = item.Id, Namn = item.Namn, Adress = item.Adress }, ajaxOptionsEdit)
+            @Ajax.ActionLink($"Delete { item.Namn}", "Delete", new { Id = item.Id }, ajaxOptions)
+
+
+        </td>
+    </tr>
+}
+
+</table>

@@ -22,12 +22,13 @@ namespace Adressbok.Controllers
         {
             newAdress.Id = Guid.NewGuid(); 
             AdressList.Add(newAdress);
-            return View(/*"ListOfAdress", AdressList*/);
+            //return PartialView("ListOfAdresses", AdressList);
+            return View();
         }
 
-        public ActionResult ListOfAdress()
+        public ActionResult ListOfAdresses()
         { 
-            return PartialView("ListOfAdress", AdressList);
+            return PartialView("ListOfAdresses", AdressList);
         }
 
         public ActionResult Edit(Guid id)
@@ -58,7 +59,7 @@ namespace Adressbok.Controllers
         {
             var Deleteid = AdressList.First(x => x.Id == id);
             AdressList.Remove(Deleteid);
-            return View(Deleteid);
+            return PartialView("ListOfAdresses", AdressList);
         }
     }
 }
