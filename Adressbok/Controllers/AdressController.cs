@@ -50,16 +50,17 @@ namespace Adressbok.Controllers
             return View(newAdress);
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete(Guid Id)
         {
-            return View();
+            var deleteID = AdressList.First(x => x.Id == Id); 
+            return View(deleteID);
         }
-        [HttpDelete]
-        public ActionResult Delete(Guid id)
+        [HttpPost]
+        public ActionResult Delete(Adressboken adress)
         {
-            var Deleteid = AdressList.First(x => x.Id == id);
+            var Deleteid = AdressList.First(x => x.Id == adress.Id);
             AdressList.Remove(Deleteid);
-            return PartialView("ListOfAdresses", AdressList);
+            return View();
         }
     }
 }
