@@ -12,7 +12,7 @@ namespace Adressbok.Controllers
         private static IList<Adressboken> AdressList = new List<Adressboken>();
 
         // GET: Adress
-        
+
         public ActionResult Create()
         {
             return View();
@@ -20,14 +20,14 @@ namespace Adressbok.Controllers
         [HttpPost]
         public ActionResult Create(Adressboken newAdress)
         {
-            newAdress.Id = Guid.NewGuid(); 
+            newAdress.Id = Guid.NewGuid();
             AdressList.Add(newAdress);
             //return PartialView("ListOfAdresses", AdressList);
             return View();
         }
 
         public ActionResult ListOfAdresses()
-        { 
+        {
             return PartialView("ListOfAdresses", AdressList);
         }
 
@@ -60,8 +60,8 @@ namespace Adressbok.Controllers
         public ActionResult Delete(Adressboken adress)
         {
             var aa = AdressList.First(x => x.Id == adress.Id);
-             AdressList.Remove(aa);
-            return PartialView("ListOfAdresses", AdressList);
+            AdressList.Remove(aa);
+            return View();
         }
     }
 }

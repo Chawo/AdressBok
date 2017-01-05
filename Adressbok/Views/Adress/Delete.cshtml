@@ -1,4 +1,4 @@
-﻿@model Adressbok.Models.Adressboken 
+﻿@model Adressbok.Models.Adressboken
 
 @{
     ViewBag.Title = "Delete";
@@ -48,17 +48,23 @@
     @{
         var ajaxOptions = new AjaxOptions
         {
-            HttpMethod = "POST"
+            HttpMethod = "POST",
+            UpdateTargetId = "result"
+
         };
     }
 
-@using (Ajax.BeginForm("Delete", "Adress", ajaxOptions))
-{ 
+    @using (Ajax.BeginForm("Delete", "Adress", ajaxOptions))
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "ListOfAdresses", "Adress")
-        </div>
+            <input type="submit" value="Delete" class="btn btn-default" /> 
+         </div>
     }
+
+    <div id="result">
+        <br /><br /><br />
+        @{Html.RenderAction("ListOfAdresses");}
+    </div>
 </div>

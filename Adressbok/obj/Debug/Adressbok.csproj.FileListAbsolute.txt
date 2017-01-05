@@ -154,6 +154,5 @@ C:\Users\KC\Source\Repos\AdressBok\Adressbok\bin\System.Web.Razor.xml
 C:\Users\KC\Source\Repos\AdressBok\Adressbok\bin\System.Web.WebPages.xml
 C:\Users\KC\Source\Repos\AdressBok\Adressbok\bin\System.Web.WebPages.Deployment.xml
 C:\Users\KC\Source\Repos\AdressBok\Adressbok\bin\System.Web.WebPages.Razor.xml
-C:\Users\KC\Source\Repos\AdressBok\Adressbok\obj\Debug\Adressbok.csprojResolveAssemblyReference.cache
 C:\Users\KC\Source\Repos\AdressBok\Adressbok\obj\Debug\Adressbok.dll
 C:\Users\KC\Source\Repos\AdressBok\Adressbok\obj\Debug\Adressbok.pdb

@@ -5,14 +5,14 @@
 }
 
 <h2>Edit</h2>
-@{ 
+@{
     var options = new AjaxOptions()
     {
         HttpMethod = "POST",
         UpdateTargetId = "result"
     };
 }
-@using (@Ajax.BeginForm("Edit", "Adress", options))   
+@using (@Ajax.BeginForm("Edit", "Adress", options))
 {
     @Html.TextBoxFor(x => x.Namn)<br />
     @Html.TextBoxFor(x => x.Adress)<br />

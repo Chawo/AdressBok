@@ -8,13 +8,14 @@
 @{
     var ajaxOptions = new AjaxOptions
     {
-        HttpMethod = "POST", UpdateTargetId= "result"
+        HttpMethod = "POST",
+        UpdateTargetId = "result"
     };
 }
 
 @using (Ajax.BeginForm("Create", "Adress", ajaxOptions))
 {
-   
+
     @Html.LabelFor(x => x.Namn)<br />
     @Html.TextBoxFor(adress => adress.Namn)<br />
     @Html.LabelFor(x => x.Telefonnummer)<br />
@@ -26,7 +27,7 @@
     <input type="submit" value="Lägg till adress" />
 }
 
- <div id="result">
-     <br /><br /><br />
+<div id="result">
+    <br /><br /><br />
     @{Html.RenderAction("ListOfAdresses");}
 </div>
