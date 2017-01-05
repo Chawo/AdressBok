@@ -8,7 +8,8 @@
 @{ 
     var options = new AjaxOptions()
     {
-        HttpMethod = "POST"
+        HttpMethod = "POST",
+        UpdateTargetId = "result"
     };
 }
 @using (@Ajax.BeginForm("Edit", "Adress", options))   
@@ -19,3 +20,7 @@
     <input type="submit" value="Spara" />
 }
 
+<div id="result">
+    <br /><br /><br />
+    @{Html.RenderAction("ListOfAdresses");}
+</div>

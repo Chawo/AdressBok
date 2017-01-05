@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Delete</h2>
@@ -46,7 +45,15 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @{
+        var ajaxOptions = new AjaxOptions
+        {
+            HttpMethod = "POST"
+        };
+    }
+
+@using (Ajax.BeginForm("Delete", "Adress", ajaxOptions))
+{ 
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
