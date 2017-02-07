@@ -9,8 +9,10 @@
     var ajaxOptions = new AjaxOptions
     {
         HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
         UpdateTargetId = "result"
     };
+
 }
 
 @using (Ajax.BeginForm("Create", "Adress", ajaxOptions))

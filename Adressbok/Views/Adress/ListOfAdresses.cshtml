@@ -6,7 +6,7 @@
 
     var ajaxOptions = new AjaxOptions
     {
-        HttpMethod = "POST",
+        HttpMethod = "GET",
         InsertionMode = InsertionMode.Replace,
         UpdateTargetId = "result"
     };
@@ -58,8 +58,7 @@
             </td>
             <td>
                 @Ajax.ActionLink("Update", "Edit", "Adress", new { Id = item.Id, Namn = item.Namn, Adress = item.Adress }, ajaxOptionsEdit)
-                @Ajax.ActionLink($"Delete { item.Namn}", "Delete", new { Id = item.Id }, ajaxOptions)
-
+                @Ajax.ActionLink("Delete", "Delete", "Adress", new { Id = item.Id, Namn = item.Namn, Adress = item.Adress }, ajaxOptions)
 
             </td>
         </tr>

@@ -6,8 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <script src="/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+   
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -21,11 +20,10 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Lägg till en Adress", "Create", "Adress", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Lista av Adress", "ListOfAdresses", "Adress", new { area = "" }, new { @class = "navbar-brand" })
- 
+
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+                <ul class="nav navbar-nav"></ul>
             </div>
         </div>
     </div>
@@ -40,6 +38,9 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false) 
+    @*<script src="/Scripts/jquery-3.1.1.min.js"></script>*@
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>

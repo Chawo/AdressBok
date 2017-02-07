@@ -13,6 +13,7 @@ namespace Adressbok.Controllers
 
         // GET: Adress
 
+       
         public ActionResult Create()
         {
             return View();
@@ -22,8 +23,8 @@ namespace Adressbok.Controllers
         {
             newAdress.Id = Guid.NewGuid();
             AdressList.Add(newAdress);
-            //return PartialView("ListOfAdresses", AdressList);
-            return View();
+            return PartialView("ListOfAdresses", AdressList);
+            //return View();
         }
 
         public ActionResult ListOfAdresses()
@@ -31,6 +32,7 @@ namespace Adressbok.Controllers
             return PartialView("ListOfAdresses", AdressList);
         }
 
+        [HttpGet]
         public ActionResult Edit(Guid id)
         {
             var adressID = AdressList.First(x => x.Id == id);
@@ -49,7 +51,7 @@ namespace Adressbok.Controllers
             }
             return View(newAdress);
         }
-
+        [HttpGet]
         public ActionResult Delete(Guid id)
         {
             var Deleteid = AdressList.First(x => x.Id == id);
